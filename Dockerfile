@@ -1,9 +1,9 @@
-FROM registry.fedoraproject.org/fedora:latest
+FROM registry.access.redhat.com/ubi8
 
-MAINTAINER "Joe Doss <joe@solidadmin.com>"
+MAINTAINER "Xabier Guitián <xguitian@gmail.com>"
 
-ARG UNIFI_VERSION=5.12.72
-ARG UNIFI_SHA256=60ea65e14ad0e8845debf451dc8e656363dc0d9d90eb053b2e6b9e2c49f09072
+ARG UNIFI_VERSION=5.13.29
+ARG UNIFI_SHA256=f7fd1912473a8d2de7ff18b4de169903c39c572733b568f1e22bb2514934cc7d
 ENV UNIFI_VERSION=${UNIFI_VERSION}
 ENV UNIFI_SHA256=${UNIFI_SHA256}
 
@@ -15,7 +15,7 @@ ENV JVM_MAX_HEAP_SIZE=${JVM_MAX_HEAP_SIZE}
 
 RUN dnf -y update && \
     dnf install -y java-1.8.0-openjdk wget unzip && \
-    dnf install -y https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.4/x86_64/RPMS/mongodb-org-server-3.4.9-1.el7.x86_64.rpm && \
+    dnf install -y https://repo.mongodb.org/yum/redhat/8/mongodb-org/3.4/x86_64/RPMS/mongodb-org-server-3.4.24-1.el8.x86_64.rpm && \
     dnf clean all -y
 
 RUN adduser -r -s /sbin/nologin -d /opt/unifi -u 271 -U unifi && \

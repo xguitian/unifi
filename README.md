@@ -4,9 +4,9 @@
 
 This is a repo for building and running a Fedora based container for the Ubiquiti Networks Unifi Controller with [Podman](https://github.com/containers/libpod).
 
-- **Version:** 5.12.72
-- **SHA256:** 60ea65e14ad0e8845debf451dc8e656363dc0d9d90eb053b2e6b9e2c49f09072
-- **Unifi Forum URL:** https://community.ui.com/releases/UniFi-Network-Controller-5-12-72/9ac72983-5130-4f58-b3ba-909f4d4bb5f9
+- **Version:** 5.13.29
+- **SHA256:** f7fd1912473a8d2de7ff18b4de169903c39c572733b568f1e22bb2514934cc7d
+- **Unifi Forum URL:** https://community.ui.com/releases/UniFi-Network-Controller-5-13-29/d7647910-77a2-4e61-bbfe-389206f2d6ad
 
 _You need to register for the beta forums to access the above Unifi Forum URL._
 
@@ -33,16 +33,16 @@ sudo podman run -d --cap-drop ALL \
   -v /opt/unifi/data:/opt/unifi/data:Z \
   -v /opt/unifi/logs:/opt/unifi/logs:Z \
   -v /opt/unifi/run:/opt/unifi/run:Z \
-  --name unifi quay.io/xguitian/unifi:5.12.72
+  --name unifi quay.io/xguitian/unifi:5.13.29
 ```
 
 ### Build From GitHub
 
 ```
-sudo podman build --build-arg UNIFI_VERSION=5.12.72 \
-    --build-arg UNIFI_SHA256=60ea65e14ad0e8845debf451dc8e656363dc0d9d90eb053b2e6b9e2c49f09072 \
+sudo podman build --build-arg UNIFI_VERSION=5.13.29 \
+    --build-arg UNIFI_SHA256=f7fd1912473a8d2de7ff18b4de169903c39c572733b568f1e22bb2514934cc7d\
     --build-arg UNIFI_UID=$(id -u unifi) \
-    -t unifi:5.12.72 git://github.com/xguitian/unifi
+    -t unifi:5.13.29 git://github.com/xguitian/unifi
 ```
 
 ### Build Locally
@@ -50,24 +50,24 @@ sudo podman build --build-arg UNIFI_VERSION=5.12.72 \
 ```
 git clone https://github.com/xguitian/unifi
 cd unifi
-sudo podman build --build-arg UNIFI_VERSION=5.12.72 \
-    --build-arg UNIFI_SHA256=60ea65e14ad0e8845debf451dc8e656363dc0d9d90eb053b2e6b9e2c49f09072 \
+sudo podman build --build-arg UNIFI_VERSION=5.13.29 \
+    --build-arg UNIFI_SHA256=f7fd1912473a8d2de7ff18b4de169903c39c572733b568f1e22bb2514934cc7d\
     --build-arg UNIFI_UID=$(id -u unifi) \
-    -t unifi:5.12.72 .
+    -t unifi:5.13.29 .
 ```
 
 ### Run the Ubiquiti Networks Unifi Controller
 
 ```
 sudo podman run -d --cap-drop ALL -e UNIFI_UID=$(id -u unifi) \
-  -e UNIFI_VERSION=5.12.72 \
+  -e UNIFI_VERSION=5.13.29 \
   -e JVM_MAX_HEAP_SIZE=1024m \
   -e TZ='America/Chicago' \
   -p 3478:3478/udp -p 8080:8080/tcp -p 8443:8443/tcp -p 8843:8843/tcp -p 10001:10001/udp \
   -v /opt/unifi/data:/opt/unifi/data:Z \
   -v /opt/unifi/logs:/opt/unifi/logs:Z \
   -v /opt/unifi/run:/opt/unifi/run:Z \
-  --name unifi localhost/unifi:5.12.72
+  --name unifi localhost/unifi:5.13.29
 ```
 
 ## License
