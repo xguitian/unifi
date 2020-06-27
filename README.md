@@ -6,7 +6,7 @@ This is a repo for building and running a Fedora based container for the Ubiquit
 
 - **Version:** 5.13.29
 - **SHA256:** f7fd1912473a8d2de7ff18b4de169903c39c572733b568f1e22bb2514934cc7d
-- **Unifi Forum URL:** https://community.ui.com/releases/UniFi-Network-Controller-5.13.29/9ac72983-5130-4f58-b3ba-909f4d4bb5f9
+- **Unifi Forum URL:** https://community.ui.com/releases/UniFi-Network-Controller-5-13-29/d7647910-77a2-4e61-bbfe-389206f2d6ad
 
 _You need to register for the beta forums to access the above Unifi Forum URL._
 
